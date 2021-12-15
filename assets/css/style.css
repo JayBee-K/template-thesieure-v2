@@ -1,0 +1,31 @@
+a, a:hover, a:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+
+input,
+select,
+textarea {
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+button {
+    outline: none !important;
+    box-shadow: none !important;
+}
