@@ -47,88 +47,152 @@
 <body>
 
 <header id="header" class="header">
-	<div class="header-top">
+	<div class="header-inner">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-7">
-					<div class="header-top_logo">
-						<a href="/">
-							<img class="header-top_logo__image" src="./assets/images/logo.png" alt="">
+				<div class="col-md-2">
+					<div class="header-inner_logo">
+						<a href="index.html">
+							<img class="header-inner_logo__image" src="./assets/images/logo.png" alt="">
 						</a>
 					</div>
 				</div>
-				<div class="col-md-5">
-					<div class="header-top_user d-md-flex align-items-center justify-content-end">
-						<div class="header-top_user__item">
-							<a href="" class="btn btn-login waves-effect waves-light">
-								<i class="fas fa-sign-in-alt mr-2"></i>
-								Đăng nhập
-							</a>
-						</div>
-						<div class="header-top_user__item">
-							<a href="" class="btn btn-register waves-effect waves-light">
-								<i class="fas fa-user-plus mr-2"></i>
-								Đăng ký
-							</a>
-						</div>
-						<div class="header-top_user__item">
-							<button type="button" class="btn btn-login waves-effect waves-light">
-								<i class="fas fa-user mr-2"></i>
-								User name
-								<i class="fal fa-angle-down btn-arrow ml-1"></i>
-							</button>
+				<div class="col-md-10">
+					<div class="d-lg-flex align-items-center justify-content-between">
+						<div class="header-inner_nav">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="">
-										<i class="fas fa-caret-right"></i>
-										Thông tin tài khoản
+									<a href="mua-ma-the.html">
+										Mua mã thẻ
 									</a>
 								</li>
 								<li>
-									<a href="">
-										<i class="fas fa-caret-right"></i>
-										Quỹ số dư
+									<a href="doi-the-cao.html">
+										Đổi thẻ cào
+										<!--
+										<i class="fas fa-angle-down"></i>
+										-->
+									</a>
+									<!--
+									<ul class="list-unstyled mb-0">
+										<li>
+											<a href="">
+												Đổi thẻ cào
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												Đổi thẻ cào
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												Đổi thẻ cào
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												Đổi thẻ cào
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												Đổi thẻ cào
+											</a>
+										</li>
+									</ul>
+									-->
+								</li>
+								<li>
+									<a href="rut-tien.html">
+										Rút tiền
 									</a>
 								</li>
 								<li>
-									<a href="">
-										<i class="fas fa-caret-right"></i>
-										Kết nối API
+									<a href="rut-tien.html">
+										Chuyển tiền
 									</a>
 								</li>
 								<li>
-									<a href="">
-										<i class="fas fa-caret-right"></i>
-										Lịch sử mua thẻ
+									<a href="nap-cuoc.html">
+										Nạp cước
 									</a>
 								</li>
 								<li>
-									<a href="">
-										<i class="fas fa-caret-right"></i>
-										Nạp quỹ
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<i class="fas fa-caret-right"></i>
-										Rút quỹ
+									<a href="nap-cuoc.html">
+										Tin tức
 									</a>
 								</li>
 							</ul>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="header-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="header-bottom_nav">
-						<ul class="list-unstyled mb-0">
-
-						</ul>
+						<div class="header-inner_user d-md-flex align-items-center justify-content-end">
+							<div class="header-inner_user__item">
+								<a href="" class="btn btn-login waves-effect waves-light">
+									<i class="fas fa-sign-in-alt mr-1"></i>
+									Đăng nhập
+								</a>
+							</div>
+							<div class="header-inner_user__item">
+								<a href="" class="btn btn-register waves-effect waves-light">
+									<i class="fas fa-user-plus mr-1"></i>
+									Đăng ký
+								</a>
+							</div>
+							<div class="header-inner_user__item d-none">
+								<span class="header-inner_user__price">
+									<span>
+										<i class="fas fa-wallet"></i>
+									</span>
+									Số dư:&nbsp;
+									<b>999.000 <sup>đ</sup></b>
+								</span>
+							</div>
+							<div class="header-inner_user__item d-none">
+								<button type="button" class="btn btn-login waves-effect waves-light">
+									<i class="fas fa-user mr-1"></i>
+									User name
+									<i class="fal fa-angle-down btn-arrow ml-1"></i>
+								</button>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="">
+											<i class="fas fa-caret-right"></i>
+											Thông tin tài khoản
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i class="fas fa-caret-right"></i>
+											Quỹ số dư
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i class="fas fa-caret-right"></i>
+											Kết nối API
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i class="fas fa-caret-right"></i>
+											Lịch sử mua thẻ
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i class="fas fa-caret-right"></i>
+											Nạp quỹ
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i class="fas fa-caret-right"></i>
+											Rút quỹ
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -137,7 +201,126 @@
 </header>
 
 <div id="main" class="main">
-
+	<div class="section-banner">
+		<div class="swiper" id="slideBanner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-6 order-2 order-md-1">
+								<h3 class="section-banner_title">
+									Tích hợp thanh toán nhiều cổng
+								</h3>
+								<p class="section-banner_desc">
+									Nạp ƯU ĐÃI trả trước, trả sau Vinaphone, Mobifone, Viettel chiết khấu từ 15-20% sau
+									10 phút sẽ thành công (không có khuyến mãi).
+								</p>
+								<div class="section-banner_button">
+									<a href="javascript:void(0)" class="btn waves-effect waves-light">
+										Nạp ngay
+									</a>
+								</div>
+							</div>
+							<div class="col-md-6 order-1 order-md-2">
+								<div class="section-banner_image">
+									<a href="#" class="d-inline-block">
+										<img src="./assets/images/banner/payment.png">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slide-button-prev"><i class="fal fa-angle-left"></i></div>
+			<div class="slide-button-next"><i class="fal fa-angle-right"></i></div>
+		</div>
+	</div>
+	<div class="section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading">
+						<div class="section-heading_title">
+							Đổi thể cào
+						</div>
+						<div class="section-heading_desc">
+							<p>► Đề nghị khách hàng nhập đúng seri thẻ để hệ thống xử lý nhanh nhất !</p>
+							<p>► Quý khách điền&nbsp;sai giá trị thẻ nạp sẽ bị trừ đi 50% của số tiền nhận được sau khi
+								trừ chiết khấu.
+							</p>
+							<p>► Ví dụ: Khi nạp thẻ&nbsp;100.000đ với chiết khấu 10%, nếu điền&nbsp;sai giá trị thẻ thì
+								quý khách chỉ nhận được 45.000đ
+							</p>
+							<p>►&nbsp;<a href="http://trumgachthe.net/doithecao">Lịch sử đổi&nbsp;thẻ&nbsp;tại đây</a>.
+								Thông kê sản lượng&nbsp;<a href="https://trumgachthe.net/doithecao/san-luong">tại
+									đây</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<form action="">
+						<div class="form-inner" id="form-expandCard">
+							<div class="row row-10 mb-3 align-items-center">
+								<div class="col-md-3">
+									<div class="form-group">
+										<select class="form-control" id="network">
+											<option name="viettel">Viettel</option>
+											<option name="vinaphone">Vinaphone</option>
+											<option name="mobile">Mobile</option>
+											<option name="gate">Gate</option>
+											<option name="zing">Zing</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<input type="text" class="form-control" id="code" placeholder="Mã thẻ">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<input type="text" class="form-control" id="seri" placeholder="Mã Seri">
+									</div>
+								</div>
+								<div class="col-md-2 col-9">
+									<div class="form-group">
+										<select class="form-control" id="price">
+											<option name="-1">--- Mệnh giá ---</option>
+											<option name="10000">10.000 đ</option>
+											<option name="20000">20.000 đ</option>
+											<option name="30000">30.000 đ</option>
+											<option name="50000">50.000 đ</option>
+											<option name="100000">100.000 đ</option>
+											<option name="200000">200.000 đ</option>
+											<option name="300000">300.000 đ</option>
+											<option name="500000">500.000 đ</option>
+											<option name="1000000">1.000.000 đ</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-1 col-3">
+									<a href="javascript:void(0)"
+									   class="createRow btn-create_row btn btn-success btn-sm waves-light waves-effect">
+										<i class="fas fa-plus"></i>
+										Thêm
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-5">
+							<div class="col-12 text-center">
+								<button class="btn btn-primary btn-send_card waves-effect waves-light">
+									<i class="fas fa-upload"></i>
+									Gửi thẻ cào
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <footer id="footer" class="footer">
