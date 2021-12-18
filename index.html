@@ -260,7 +260,7 @@
 				</div>
 				<div class="col-12">
 					<form action="">
-						<div class="form-inner" id="form-expandCard">
+						<div class="form-inner" id="form-expandCard_Change">
 							<div class="row row-10 mb-3 align-items-center">
 								<div class="col-md-3">
 									<div class="form-group">
@@ -300,6 +300,104 @@
 									</div>
 								</div>
 								<div class="col-md-1 col-3">
+									<a href="javascript:void(0)"
+									   class="createRow btn-create_row btn btn-success btn-sm waves-light waves-effect">
+										<i class="fas fa-plus"></i>
+										Thêm
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-5">
+							<div class="col-12 text-center">
+								<button class="btn btn-primary btn-send_card waves-effect waves-light">
+									<i class="fas fa-upload"></i>
+									Gửi thẻ cào
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading">
+						<div class="section-heading_title">
+							Nạp cước, nạp topup
+						</div>
+						<div class="section-heading_desc">
+							<p>Chúng tôi cung cấp tới khách hàng 2 loại nạp tiền điện thoại:</p>
+							<p>1. Nạp ƯU ĐÃI trả trước, trả sau Vinaphone, Mobifone, Viettel chiết khấu từ 15-20% sau 10
+								phút sẽ thành công (không có khuyến mãi).
+							</p>
+							<p>2. Nạp trả trước, trả sau thời gian 1 giây các nhà mạng di động Viettel, Vina, Mobi,
+								Gtel, Vnmobile chiết khấu từ 3-7% (có khuyến mãi theo chính sách của nhà mạng).
+							</p>
+							<p>Lưu ý: Quý khách thanh toán bằng cách nạp tiền sẵn vào tài khoản trên website hoặc thanh
+								toán qua các cổng thanh toán chúng tôi có, nếu sau 15 phút không nhận được thanh toán
+								thì đơn hàng sẽ tự động bị hủy.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<form action="">
+						<div class="form-inner" id="form-expandCard_TopUp">
+							<div class="row row-10 mb-3 align-items-center">
+								<div class="col-md-2">
+									<div class="form-group">
+										<input type="tel" minlength="10" maxlength="11" class="form-control" id="sdt"
+											   placeholder="Số điện thoại">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<select class="form-control" id="nhamang">
+											<option name="-1">--- Nhà mạng ---</option>
+											<option name="">Viettel trả trước</option>
+											<option name="">Viettel trả sau / FTTH / Home</option>
+											<option name="">Vina trả trước</option>
+											<option name="">Vina trả sau</option>
+											<option name="">Mobi trả trước</option>
+											<option name="">Mobi trả sau</option>
+											<option name="">Bắn TKC Viettel</option>
+											<option name="">Bắn TKC Vina</option>
+											<option name="">Bắn TKC Mobi</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<select class="form-control" id="price">
+											<option name="-1">--- Mệnh giá ---</option>
+											<option name="10000">10.000 đ</option>
+											<option name="20000">20.000 đ</option>
+											<option name="30000">30.000 đ</option>
+											<option name="50000">50.000 đ</option>
+											<option name="100000">100.000 đ</option>
+											<option name="200000">200.000 đ</option>
+											<option name="300000">300.000 đ</option>
+											<option name="500000">500.000 đ</option>
+											<option name="1000000">1.000.000 đ</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<input type="text" class="form-control" id="chietkhau" placeholder="Chiết khấu"
+											   readonly>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<input type="text" class="form-control" id="ghichu" placeholder="Ghi chú">
+									</div>
+								</div>
+								<div class=" col-md-1 col-3">
 									<a href="javascript:void(0)"
 									   class="createRow btn-create_row btn btn-success btn-sm waves-light waves-effect">
 										<i class="fas fa-plus"></i>
