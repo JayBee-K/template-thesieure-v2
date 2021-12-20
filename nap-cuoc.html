@@ -45,22 +45,41 @@
 	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
 <header id="header" class="header">
 	<div class="header-inner">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-2">
+				<div class="col-lg-2">
 					<div class="header-inner_logo">
 						<a href="index.html">
 							<img class="header-inner_logo__image" src="./assets/images/logo.png" alt="">
 						</a>
+						<div id="user-mobile" class="header-inner_mobile__user d-block d-lg-none">
+							<a id="call-user_mobile" href="javascript:void(0)">
+								<i class="fas fa-user"></i>
+							</a>
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="dang-nhap.html">Đăng nhập</a>
+								</li>
+								<li>
+									<a href="dang-ky.html">Đăng ký</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header-inner_hamburger d-block d-lg-none">
+							<button type="button" class="no-animation" id="call-header_mobile">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-10">
+				<div class="col-lg-10 mobile-no_relative">
 					<div class="d-lg-flex align-items-center justify-content-between">
 						<div class="header-inner_nav">
-							<ul class="list-unstyled mb-0">
+							<ul class="list-unstyled mb-0" id="hasMenuTopUp">
 								<li>
 									<a href="mua-ma-the.html">
 										Mua mã thẻ
@@ -69,11 +88,8 @@
 								<li>
 									<a href="doi-the-cao.html">
 										Đổi thẻ cào
-										<!--
 										<i class="fas fa-angle-down"></i>
-										-->
 									</a>
-									<!--
 									<ul class="list-unstyled mb-0">
 										<li>
 											<a href="">
@@ -101,7 +117,6 @@
 											</a>
 										</li>
 									</ul>
-									-->
 								</li>
 								<li>
 									<a href="rut-tien.html">
@@ -125,7 +140,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="header-inner_user d-md-flex align-items-center justify-content-end">
+						<div class="header-inner_user d-lg-flex align-items-center justify-content-end">
 							<div class="header-inner_user__item">
 								<a href="dang-nhap.html" class="btn btn-login waves-effect waves-light">
 									<i class="fas fa-sign-in-alt mr-2"></i>
@@ -240,7 +255,7 @@
 				</div>
 				<div class="col-12">
 					<form action="">
-						<div class="form-inner mb-4">
+						<div class="form-inner mb-lg-4 mb-5">
 							<div class="row align-items-center form-group">
 								<div class="col-md-2">
 									<label for="ptthanhtoan" class="font-weight-bold  mb-0">Phương thức thanh
@@ -307,7 +322,7 @@
 											   readonly>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 col-9">
 									<div class="form-group">
 										<input type="text" class="form-control" id="ghichu" placeholder="Ghi chú">
 									</div>
@@ -321,7 +336,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row mt-5">
+						<div class="row mt-4 mt-lg-5">
 							<div class="col-12 text-center">
 								<button class="btn btn-primary btn-send_card waves-effect waves-light">
 									<i class="fas fa-shopping-bag"></i>
@@ -384,7 +399,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-3 col-6 my-4">
+			<div class="col-md-3 my-4">
 				<div class="footer-item">
 					<div class="footer-item_title">
 						Liên hệ

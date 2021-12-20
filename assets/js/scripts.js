@@ -19,6 +19,7 @@ const slideBanner = function () {
 	});
 }
 
+
 const initRowCardChange = function () {
 	let elm = $('#form-expandCard_Change');
 	elm.find('.createRow').click(function () {
@@ -75,7 +76,6 @@ const initRowCardChange = function () {
 		$(this).closest('.row').remove();
 	});
 }
-
 const initRowCardTopUp = function () {
 	let elm = $('#form-expandCard_TopUp');
 	elm.find('.createRow').click(function () {
@@ -124,7 +124,7 @@ const initRowCardTopUp = function () {
 											   readonly>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 col-9">
 									<div class="form-group">
 										<input type="text" class="form-control" id="ghichu" placeholder="Ghi chú">
 									</div>
@@ -153,6 +153,89 @@ const changeTabCard = function (e) {
 	});
 }
 
+let windowWidth = $(window).width();
+const scrollCartShoppingMobile = function () {
+	if (windowWidth < 768 && $('#shopping-cart-wrapper').length > 0) {
+		$(window).scroll(function () {
+			let top = $(document).scrollTop();
+			let heightCart = $('#shopping-cart-wrapper').offset().top - $('#shopping-cart-wrapper').innerHeight();
+
+			if (top >= heightCart) {
+				$('.fixedCart').removeClass('show');
+			} else {
+				$('.fixedCart').addClass('show');
+			}
+		});
+	}
+
+	$('.scrollCart').click(function (e) {
+		$('body').animate({
+			'scrollTop': $('#shopping-cart-wrapper').offset().top - 60
+		}, 250)
+	});
+}
+
+const handleTouchMove = function (ev) {
+	ev.preventDefault();
+}
+
+const navigationMobile = function (e) {
+	if (windowWidth < 992) {
+		$("#header .header-inner .header-inner_nav > ul > li > ul").each(function (index) {
+			$(this).prev().attr({
+				"href": "#subMenuTopUp" + index,
+				"data-toggle": "collapse"
+			});
+			$(this).attr({
+				"id": "subMenuTopUp" + index,
+				"class": "collapse list-unstyled mb-0",
+				"data-parent": "#hasMenuTopUp"
+			});
+		})
+
+		/*
+		 * Call menu mobile
+		 */
+		let body = $('body'),
+			hamburgerIcon = $('#call-header_mobile');
+
+		hamburgerIcon.click(function (e) {
+			if (!body.hasClass('is-show_navigation')) {
+				body.attr({
+					'class': 'is-show_navigation',
+					'style': 'overflow-y: hidden'
+				});
+				document.addEventListener('touchmove', handleTouchMove, {passive: false});
+				$('#user-mobile').removeClass('active');
+			} else {
+				body.attr({
+					'class': '',
+					'style': ''
+				});
+				document.removeEventListener('touchmove', handleTouchMove);
+			}
+		});
+	}
+}
+
+const callUserMobile = function () {
+	$('#call-user_mobile').click(function () {
+		$(this).parent().toggleClass('active');
+		$('body').attr({
+			'class': '',
+			'style': ''
+		});
+		document.removeEventListener('touchmove', handleTouchMove);
+	});
+
+	$(document).mouseup(function (e) {
+		let elm = $('#user-mobile');
+		elm.is(e.target) || 0 !== elm.has(e.target).length || (
+			elm.removeClass('active')
+		)
+	})
+}
+
 $(function () {
 	Waves.init();
 
@@ -161,4 +244,7 @@ $(function () {
 	initRowCardChange();
 	initRowCardTopUp();
 	changeTabCard();
+	scrollCartShoppingMobile();
+	navigationMobile();
+	callUserMobile();
 });

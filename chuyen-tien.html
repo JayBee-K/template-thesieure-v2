@@ -45,22 +45,41 @@
 	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
 <header id="header" class="header">
 	<div class="header-inner">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-2">
+				<div class="col-lg-2">
 					<div class="header-inner_logo">
 						<a href="index.html">
 							<img class="header-inner_logo__image" src="./assets/images/logo.png" alt="">
 						</a>
+						<div id="user-mobile" class="header-inner_mobile__user d-block d-lg-none">
+							<a id="call-user_mobile" href="javascript:void(0)">
+								<i class="fas fa-user"></i>
+							</a>
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="dang-nhap.html">Đăng nhập</a>
+								</li>
+								<li>
+									<a href="dang-ky.html">Đăng ký</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header-inner_hamburger d-block d-lg-none">
+							<button type="button" class="no-animation" id="call-header_mobile">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-10">
+				<div class="col-lg-10 mobile-no_relative">
 					<div class="d-lg-flex align-items-center justify-content-between">
 						<div class="header-inner_nav">
-							<ul class="list-unstyled mb-0">
+							<ul class="list-unstyled mb-0" id="hasMenuTopUp">
 								<li>
 									<a href="mua-ma-the.html">
 										Mua mã thẻ
@@ -69,11 +88,8 @@
 								<li>
 									<a href="doi-the-cao.html">
 										Đổi thẻ cào
-										<!--
 										<i class="fas fa-angle-down"></i>
-										-->
 									</a>
-									<!--
 									<ul class="list-unstyled mb-0">
 										<li>
 											<a href="">
@@ -101,7 +117,6 @@
 											</a>
 										</li>
 									</ul>
-									-->
 								</li>
 								<li>
 									<a href="rut-tien.html">
@@ -125,7 +140,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="header-inner_user d-md-flex align-items-center justify-content-end">
+						<div class="header-inner_user d-lg-flex align-items-center justify-content-end">
 							<div class="header-inner_user__item">
 								<a href="dang-nhap.html" class="btn btn-login waves-effect waves-light">
 									<i class="fas fa-sign-in-alt mr-2"></i>
@@ -272,7 +287,7 @@
 											  placeholder="Nhập nội dung"></textarea>
 								</div>
 							</div>
-							<div class="row mt-5">
+							<div class="row mt-4 mt-lg-5">
 								<div class="col-12 text-center">
 									<button class="btn btn-primary btn-send_card waves-effect waves-light">
 										Chuyển tiền
@@ -282,9 +297,9 @@
 						</div>
 					</form>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-5 mt-5 mt-md-0">
 					<div class="section-heading">
-						<div class="section-heading_title text-left">
+						<div class="section-heading_subtitle text-left">
 							PHÍ CHUYỂN TIỀN
 						</div>
 					</div>
@@ -321,9 +336,80 @@
 				</div>
 				<div class="col-md-12 mt-5">
 					<div class="section-heading">
-						<div class="section-heading_title text-left">
+						<div class="section-heading_subtitle text-left">
 							Lịch sử chuyển tiền
 						</div>
+					</div>
+					<div class="table-filter form-inner mb-2">
+						<form action="">
+							<div class="row row-25">
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Tìm kiếm...">
+									</div>
+								</div>
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Mã số...">
+									</div>
+								</div>
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Mã số...">
+									</div>
+								</div>
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Mã số...">
+									</div>
+								</div>
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<select name="" id="" class="form-control">
+											<option value="">--Chọn giá tiền--</option>
+											<option value="">Dưới 50k</option>
+											<option value="">Từ 50k - 200k</option>
+											<option value="">Từ 200k - 1 Triệu</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<select name="" id="" class="form-control">
+											<option value="">Chưa bán</option>
+											<option value="">Đã bán</option>
+											<option value="">Đã cọc</option>
+											<option value="">Tất cả</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg col-md-3 col-6">
+									<div class="form-group">
+										<select name="" id="" class="form-control">
+											<option value="">--Tất cả--</option>
+											<option value="">Có</option>
+											<option value="">Không</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 col-md flex-lg-grow-0">
+									<div class="d-flex align-items-center">
+										<button class="btn btn-primary waves-effect waves-light">
+											<span class="fal fa-search"></span>
+											Tim kiềm
+										</button>
+										<button class="btn text-nowrap waves-effect waves-light btn-pdf ml-1">
+											<i class="fas fa-file-pdf"></i>
+											Xuất PDF
+										</button>
+										<button class="btn text-nowrap waves-effect waves-light btn-excel ml-1">
+											<i class="fas fa-file-excel"></i>
+											Xuất Excel
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
 					</div>
 					<div class="table-responsive">
 						<table class="section-table">
@@ -413,7 +499,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-3 col-6 my-4">
+			<div class="col-md-3 my-4">
 				<div class="footer-item">
 					<div class="footer-item_title">
 						Liên hệ
