@@ -1373,20 +1373,20 @@ body {
     padding-bottom: 8px;
     white-space: nowrap;
     border: 0;
-    border-left: 6px solid #e9e9e9;
+    border-left: 6px solid #c2c1c1;
     border-radius: 0;
     padding-left: 20px;
     padding-right: 20px;
-    background: #fafafa;
+    background: #e7e6e6;
     display: block;
 }
 
 
 .section-tab .nav-tabs .nav-item .nav-link.active {
-    color: var(--primary-color);
+    color: #fff;
     font-weight: 700;
     border-color: var(--primary-color);
-    background: #fff;
+    background: var(--primary-color);
 }
 
 .section-tab .nav-tabs .nav-item .nav-link.active:before {
@@ -2140,35 +2140,6 @@ body {
 
 .card-change.active svg {
     opacity: 1;
-    animation: apperance 1.5s infinite;
-}
-
-
-@keyframes apperance {
-    0% {
-        opacity: 0;
-        transform: scale(.5)
-    }
-
-    25% {
-        opacity: .3;
-        transform: scale(.7)
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1)
-    }
-
-    75% {
-        opacity: .7;
-        transform: scale(.7)
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(.7)
-    }
 }
 
 .card-price {
@@ -2325,10 +2296,9 @@ body {
 
 .card-recharge label {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    align-items: center;
     border-radius: 8px;
-    padding: 8px 20px;
+    padding: 8px 15px;
     border: 1px solid #e9e9e9;
     position: relative;
     transition: var(--transition);
@@ -2346,10 +2316,28 @@ body {
     text-decoration: line-through;
 }
 
+.card-recharge label .image {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: var(--white);
+    flex-shrink: 0;
+}
+
+.card-recharge label .image img {
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+}
+
 .card-recharge label .sub {
     font-weight: 700;
     color: var(--primary-color);
     font-size: 1.2em;
+    margin-left: 10px;
 }
 
 .card-recharge label svg {
@@ -2363,16 +2351,18 @@ body {
 }
 
 .card-recharge input:checked + label {
-    border-color: var(--primary-color);
-    background: rgba(var(--secondary-rgb), .06);
+    border-color: var(--success);
+    background: rgb(137 239 156 / 45%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, .23);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .23));
-
 }
 
 .card-recharge input:checked + label svg {
     opacity: 1;
-    animation: apperance 1.5s infinite;
+}
+
+.card-recharge input:checked + label .sub {
+    color: var(--secondary-color);
 }
 
 .recharge-inner_form {
