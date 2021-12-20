@@ -2304,6 +2304,7 @@ body {
     transition: var(--transition);
     margin-bottom: 0;
     cursor: pointer;
+    background-color: #fafafa;
 }
 
 .card-recharge label .text {
@@ -2352,7 +2353,7 @@ body {
 
 .card-recharge input:checked + label {
     border-color: var(--success);
-    background: rgb(137 239 156 / 45%);
+    background: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, .23);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .23));
 }
@@ -2362,7 +2363,7 @@ body {
 }
 
 .card-recharge input:checked + label .sub {
-    color: var(--secondary-color);
+    color: var(--success);
 }
 
 .recharge-inner_form {
