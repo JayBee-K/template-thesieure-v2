@@ -145,6 +145,14 @@ const initRowCardTopUp = function () {
 	});
 }
 
+const changeTabCard = function (e) {
+	$('.card-change[data-toggle=tab]').on('shown.bs.tab', function () {
+		$('.card-change[data-toggle=tab]').removeClass('active');
+		$(this).addClass('active');
+		$(this).parent().addClass('active');
+	});
+}
+
 $(function () {
 	Waves.init();
 
@@ -152,4 +160,5 @@ $(function () {
 
 	initRowCardChange();
 	initRowCardTopUp();
+	changeTabCard();
 });
