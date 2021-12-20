@@ -219,7 +219,7 @@ const navigationMobile = function (e) {
 }
 
 const callUserMobile = function () {
-	$('#call-user_mobile').click(function () {
+	$('#call-user_mobile, #header-overlay').click(function () {
 		$(this).parent().toggleClass('active');
 		$('body').attr({
 			'class': '',

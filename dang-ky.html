@@ -59,11 +59,57 @@
                                 <i class="fas fa-user"></i>
                             </a>
                             <ul class="list-unstyled mb-0">
+                                <!--
                                 <li>
                                     <a href="dang-nhap.html">Đăng nhập</a>
                                 </li>
                                 <li>
                                     <a href="dang-ky.html">Đăng ký</a>
+                                </li>
+                                -->
+                                <li class="name">User name</li>
+                                <li class="wallet">
+                                    <span>
+                                        <i class="fas fa-wallet"></i>
+                                    </span>
+                                    Số dư:&nbsp;
+                                    <b>999.000 <sup>đ</sup></b>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fas fa-caret-right"></i>
+                                        Thông tin tài khoản
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fas fa-caret-right"></i>
+                                        Quỹ số dư
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fas fa-caret-right"></i>
+                                        Kết nối API
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fas fa-caret-right"></i>
+                                        Lịch sử mua thẻ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fas fa-caret-right"></i>
+                                        Nạp quỹ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fas fa-caret-right"></i>
+                                        Rút quỹ
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -141,19 +187,19 @@
                             </ul>
                         </div>
                         <div class="header-inner_user d-lg-flex align-items-center justify-content-end">
-                            <div class="header-inner_user__item">
+                            <div class="header-inner_user__item d-none">
                                 <a href="dang-nhap.html" class="btn btn-login waves-effect waves-light">
                                     <i class="fas fa-sign-in-alt mr-2"></i>
                                     Đăng nhập
                                 </a>
                             </div>
-                            <div class="header-inner_user__item">
+                            <div class="header-inner_user__item d-none">
                                 <a href="dang-ky.html" class="btn btn-register waves-effect waves-light">
                                     <i class="fas fa-user-plus mr-2"></i>
                                     Đăng ký
                                 </a>
                             </div>
-                            <div class="header-inner_user__item d-none">
+                            <div class="header-inner_user__item">
                                 <span class="header-inner_user__price">
                                     <span>
                                         <i class="fas fa-wallet"></i>
@@ -162,7 +208,7 @@
                                     <b>999.000 <sup>đ</sup></b>
                                 </span>
                             </div>
-                            <div class="header-inner_user__item d-none">
+                            <div class="header-inner_user__item">
                                 <button type="button" class="btn btn-login waves-effect waves-light">
                                     <i class="fas fa-user mr-2"></i>
                                     User name
@@ -208,6 +254,7 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="header-overlay" id="header-overlay"></div>
                     </div>
                 </div>
             </div>
@@ -347,6 +394,17 @@
                 <div class="col-md-6">
                     <div class="footer-dropdown d-flex align-items-center justify-content-lg-end">
                         <div class="dropdown dropdown-wrap">
+                            <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownCurrency" data-toggle="dropdown">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span class="px-2">Tiền tệ</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCurrency">
+                                <a class="dropdown-item" href="#">Dollars</a>
+                                <a class="dropdown-item" href="#">Nhân dân tệ</a>
+                                <a class="dropdown-item active" href="#">Vietnam đồng</a>
+                            </div>
+                        </div>
+                        <div class="dropdown dropdown-wrap ml-2">
                             <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownLanguage"
                                     data-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-globe"></i>
