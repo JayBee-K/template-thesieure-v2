@@ -122,6 +122,12 @@ body {
     margin: 5px 0 5px 10px;
 }
 
+.header .header-top .header-inner_user .header-inner_user__item .header-inner_user__price,
+.header .header-top .header-inner_user .header-inner_user__item > .btn-register{
+    border: 1px solid #bfbebe;
+    background: #fff;
+}
+
 .header .header-inner {
     position: relative;
     z-index: 2;
@@ -391,6 +397,7 @@ body {
     .header .header-top {
         display: none;
     }
+
     .header .header-inner_user {
         display: none;
     }
