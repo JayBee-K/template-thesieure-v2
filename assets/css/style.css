@@ -116,6 +116,36 @@ body {
 .header .header-top {
     background: #f0f0f0;
     border-bottom: 1px solid #e9e9e9;
+    position: relative;
+    z-index: 3;
+}
+
+.header .header-inner_contact .header-inner_contact__item {
+    position: relative;
+    font-size: 14px;
+    margin: 5px 20px 5px 0;
+}
+
+.header .header-inner_contact .header-inner_contact__item > a {
+    display: flex;
+    align-items: center;
+    font-size: .95em;
+    color: #232323;
+    font-weight: 700;
+}
+
+.header .header-inner_contact .header-inner_contact__item > a > span {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: .9em;
 }
 
 .header .header-top .header-inner_user .header-inner_user__item > .btn {
@@ -1422,6 +1452,10 @@ body {
     margin-left: 6px;
 }
 
+.section-tab.section-page_tab .nav-tabs .nav-item {
+    max-width: 200px;
+}
+
 .section-tab .nav-tabs .nav-item .nav-link {
     margin-bottom: 0;
     text-align: center;
@@ -1436,7 +1470,8 @@ body {
     padding-bottom: 8px;
     white-space: nowrap;
     border: 0;
-//border-left: 6px solid #fff; border-radius: 0;
+/ / border-left: 6 px solid #fff;
+    border-radius: 0;
     padding-left: 20px;
     padding-right: 20px;
     background: #e7e6e6;
