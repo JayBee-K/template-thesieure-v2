@@ -1718,6 +1718,10 @@ body {
 }
 
 .footer .footer-item_info p a {
+    color: #222;
+}
+
+.footer .footer-item_info p.footer-item_info__social a {
     margin-right: 15px;
     border-radius: 50%;
     display: inline-flex;
@@ -1731,7 +1735,7 @@ body {
     background: #fff;
 }
 
-.footer .footer-item_info p a:hover {
+.footer .footer-item_info p.footer-item_info__social a:hover {
     background: var(--primary-color);
     color: #fff;
 }
