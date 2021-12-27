@@ -236,9 +236,20 @@ const callUserMobile = function () {
 	})
 }
 
+const headerScroll = function (e) {
+	$(window).scroll(function (e) {
+		if ($(document).scrollTop() > $('#header').innerHeight()) {
+			$('#header').addClass('is-scroll').removeClass('is-scrolled');
+		} else {
+			$('#header').removeClass('is-scroll').addClass('is-scrolled');
+		}
+	});
+}
+
+
 $(function () {
 	Waves.init();
-
+	headerScroll();
 	slideBanner();
 
 	initRowCardChange();
