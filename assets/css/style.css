@@ -141,11 +141,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: var(--primary-color);
-    color: var(--white);
-    margin-right: 8px;
+    color: var(--primary-color);
+    //color: var(--white);
     border-radius: 4px;
-    font-size: .9em;
+    margin-right: 4px;
+    font-size: 1.1em;
 }
 
 .header .header-top .header-inner_user .header-inner_user__item > .btn {
@@ -312,11 +312,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: var(--primary-color);
-    color: var(--white);
-    margin-right: 5px;
+    color: var(--primary-color);
+//color: var(--white);
     border-radius: 4px;
-    font-size: .9em;
+    margin-right: 4px;
+    font-size: 1.1em;
 }
 
 .header .header-inner .header-inner_nav > ul {
@@ -539,7 +539,7 @@ body {
         border-radius: 0 0 3px 3px;
         -webkit-box-shadow: 3px 3px 5px rgb(0 0 0 / 10%);
         box-shadow: 3px 3px 5px rgb(0 0 0 / 10%);
-        min-width: 150px;
+        min-width: 170px;
         width: max-content;
     }
 
