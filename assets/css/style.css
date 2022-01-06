@@ -1052,14 +1052,15 @@ body {
 .section-banner .slide-button-prev {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     color: var(--primary-color);
     background-color: var(--white);
-    width: 40px;
-    height: 85px;
+    border: 1px solid #fff;
+    width: 50px;
+    height: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1075,19 +1076,21 @@ body {
     -o-transition: var(--transition);
     transition: var(--transition);
     outline: none !important;
+    border-radius: 50%;
 }
 
 .section-banner .slide-button-next {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 10px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     color: var(--primary-color);
     background-color: var(--white);
-    width: 40px;
-    height: 85px;
+    border: 1px solid #fff;
+    width: 50px;
+    height: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1103,11 +1106,18 @@ body {
     -o-transition: var(--transition);
     transition: var(--transition);
     outline: none !important;
+    border-radius: 50%;
 }
 
 .section-banner .slide-button-next.swiper-button-disabled,
 .section-banner .slide-button-prev.swiper-button-disabled {
     opacity: 0
+}
+
+.section-banner .slide-button-next:hover,
+.section-banner .slide-button-prev:hover {
+    background: var(--primary-color);
+    color: #fff;
 }
 
 .section-banner .slide-button-prev.swiper-button-block {
@@ -2317,6 +2327,9 @@ body {
     margin-bottom: 20px;
     font-size: 1.1em;
     font-weight: 700;
+    background: #e7e6e6;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+    cursor: pointer;
 }
 
 .card-price svg {
