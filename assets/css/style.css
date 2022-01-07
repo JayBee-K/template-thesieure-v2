@@ -994,6 +994,10 @@ body {
     background: -webkit-linear-gradient(to right, var(--primary-hover), var(--primary-color));
     background: linear-gradient(to right, var(--primary-hover), var(--primary-color));
     padding: 50px 0;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-banner .swiper-slide .section-banner_title {
