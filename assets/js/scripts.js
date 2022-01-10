@@ -78,7 +78,7 @@ const initRowCardChange = function () {
 }
 const initRowCardTopUp = function () {
 	let elm = $('#form-expandCard_TopUp');
-	elm.find('.createRow').click(function () {
+	elm.on('click', '.createRow', function () {
 		html = `<div class="row row-10 mb-3 align-items-center">
 								<div class="col-md-2">
 									<div class="form-group">
