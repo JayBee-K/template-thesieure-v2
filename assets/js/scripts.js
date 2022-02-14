@@ -131,9 +131,9 @@ const initRowCardTopUp = function () {
 								</div>
 								<div class=" col-md-1 col-3">
 									<a href="javascript:void(0)"
-									   class="createRow btn-create_row btn btn-success btn-sm waves-light waves-effect">
-										<i class="fas fa-plus"></i>
-										Thêm
+									   class="deleteRow btn-delete_row btn btn-danger btn-sm waves-light waves-effect">
+										<i class="fas fa-minus"></i>
+										Xóa
 									</a>
 								</div>
 							</div>`;
