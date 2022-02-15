@@ -164,6 +164,10 @@ body {
     background: var(--white);
 }
 
+.header .header-inner .header-inner_logo {
+    padding: 14px 0;
+}
+
 .header .header-inner .header-inner_logo .header-inner_logo__image {
     height: auto;
     width: 100%;
@@ -325,6 +329,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .header .header-inner .header-inner_nav > ul > li {
@@ -342,6 +347,7 @@ body {
     -o-transition: .3s all ease;
     transition: .3s all ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .header .header-inner .header-inner_nav > ul > li > a:before {
