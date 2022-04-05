@@ -219,7 +219,7 @@ body {
 }
 
 .header .header-inner_user .header-inner_user__item > .btn-login-outline:hover,
-.header .header-inner_user .header-inner_user__item > .btn-login-outline:active{
+.header .header-inner_user .header-inner_user__item > .btn-login-outline:active {
     color: var(--white);
     background: var(--primary-color);
 }
@@ -1580,12 +1580,12 @@ body {
     padding-bottom: 8px;
     white-space: nowrap;
     border: 0;
-/ / border-left: 6 px solid #fff;
-    border-radius: 0;
+    border-radius: 3px 3px 0 0;
     padding-left: 20px;
     padding-right: 20px;
     background: #e7e6e6;
     display: block;
+    overflow: hidden;
 }
 
 .section-tab .nav-tabs .nav-item:first-child {
@@ -1745,16 +1745,30 @@ body {
 .footer .footer-item_title {
     font-size: 1.2em;
     color: #222;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
     display: inline-block;
     font-weight: 700;
     margin-bottom: 15px;
+    position: relative;
 }
+
+.footer .footer-item_title:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #8a8a8a8a;
+    left: 0;
+    bottom: 0;
+}
+
 .footer .footer-item_list ul li + li {
     border-top: 1px solid #ededed;
     padding-top: 10px;
     margin-top: 10px;
 }
+
 .footer .footer-item_list ul li a {
     display: inline-block;
     font-size: 1.1em;
@@ -1795,8 +1809,7 @@ body {
 
 .footer-bottom {
     background: #fff;
-    //border-top: 1px solid #d8d8d8;
-    font-size: 1em;
+//border-top: 1px solid #d8d8d8; font-size: 1em;
     letter-spacing: 0.5px;
     padding: 0 0 10px
 }
