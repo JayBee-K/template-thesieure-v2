@@ -1580,7 +1580,7 @@ body {
     z-index: 1;
     font-size: .95rem;
     letter-spacing: 0.4px;
-    color: #fff;
+    color: var(--color-dark);
     -webkit-transition: .2s all ease;
     -o-transition: .2s all ease;
     transition: .2s all ease;
@@ -1593,7 +1593,6 @@ body {
     background: #e7e6e6;
     display: block;
     overflow: hidden;
-    background: var(--secondary-color);
 }
 
 .section-tab .nav-tabs .nav-item:first-child {
