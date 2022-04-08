@@ -1554,11 +1554,17 @@ body {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     position: relative;
+    justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+    .section-tab .nav-tabs {
+        justify-content: flex-start;
+    }
 }
 
 .section-tab .nav-tabs .nav-item {
     position: relative;
-    flex: 1 1 0%;
     margin-left: 6px;
 }
 
@@ -1572,8 +1578,9 @@ body {
     width: 100%;
     position: relative;
     z-index: 1;
-    font-size: 1.05rem;
-    color: var(--color-dark);
+    font-size: .95rem;
+    letter-spacing: 0.4px;
+    color: #fff;
     -webkit-transition: .2s all ease;
     -o-transition: .2s all ease;
     transition: .2s all ease;
@@ -1586,6 +1593,7 @@ body {
     background: #e7e6e6;
     display: block;
     overflow: hidden;
+    background: var(--secondary-color);
 }
 
 .section-tab .nav-tabs .nav-item:first-child {
@@ -1809,8 +1817,7 @@ body {
 
 .footer-bottom {
     background: #fff;
-//border-top: 1px solid #d8d8d8; font-size: 1em;
-    letter-spacing: 0.5px;
+//border-top: 1px solid #d8d8d8; font-size: 1em; letter-spacing: 0.5px;
     padding: 0 0 10px
 }
 
