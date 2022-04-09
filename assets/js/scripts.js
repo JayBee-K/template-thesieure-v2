@@ -1,29 +1,29 @@
 const slideBanner = function () {
-	new Swiper('#slideBanner', {
-		loop: false,
-		simulateTouch: false,
-		speed: 250,
-		navigation: {
-			nextEl: '#slideBanner .slide-button-next',
-			prevEl: '#slideBanner .slide-button-prev',
-		},
-		autoplay: {
-			delay: 10000,
-			disableOnInteraction: false,
-		},
-		on: {
-			init: function () {
-				Waves.attach('#slideBanner .swiper-slide .btn');
-			}
-		}
-	});
+    new Swiper('#slideBanner', {
+        loop: false,
+        simulateTouch: false,
+        speed: 250,
+        navigation: {
+            nextEl: '#slideBanner .slide-button-next',
+            prevEl: '#slideBanner .slide-button-prev',
+        },
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+        },
+        on: {
+            init: function () {
+                Waves.attach('#slideBanner .swiper-slide .btn');
+            }
+        }
+    });
 }
 
 
 const initRowCardChange = function () {
-	let elm = $('#form-expandCard_Change');
-	elm.find('.createRow').click(function () {
-		html = `<div class="row row-10 mb-3 align-items-center">
+    let elm = $('#form-expandCard_Change');
+    elm.find('.createRow').click(function () {
+        html = `<div class="row row-10 mb-3 align-items-center">
 									<div class="col-md-3">
 										<div class="form-group">
 											<select class="form-control" id="network">
@@ -69,17 +69,17 @@ const initRowCardChange = function () {
 										</a>
 									</div>
 								</div>`;
-		$('#form-expandCard_Change').append(html)
-	});
+        $('#form-expandCard_Change').append(html)
+    });
 
-	elm.on('click', '.deleteRow', function () {
-		$(this).closest('.row').remove();
-	});
+    elm.on('click', '.deleteRow', function () {
+        $(this).closest('.row').remove();
+    });
 }
 const initRowCardTopUp = function () {
-	let elm = $('#form-expandCard_TopUp');
-	elm.on('click', '.createRow', function () {
-		html = `<div class="row row-10 mb-3 align-items-center">
+    let elm = $('#form-expandCard_TopUp');
+    elm.on('click', '.createRow', function () {
+        html = `<div class="row row-10 mb-3 align-items-center">
 								<div class="col-md-2">
 									<div class="form-group">
 										<input type="tel" minlength="10" maxlength="11" class="form-control" id="sdt"
@@ -137,125 +137,176 @@ const initRowCardTopUp = function () {
 									</a>
 								</div>
 							</div>`;
-		$('#form-expandCard_TopUp').append(html)
-	});
+        $('#form-expandCard_TopUp').append(html)
+    });
 
-	elm.on('click', '.deleteRow', function () {
-		$(this).closest('.row').remove();
-	});
+    elm.on('click', '.deleteRow', function () {
+        $(this).closest('.row').remove();
+    });
 }
 
 const changeTabCard = function (e) {
-	$('.card-change[data-toggle=tab]').on('shown.bs.tab', function () {
-		$('.card-change[data-toggle=tab]').removeClass('active');
-		$(this).addClass('active');
-		$(this).parent().addClass('active');
-	});
+    $('.card-change[data-toggle=tab]').on('shown.bs.tab', function () {
+        $('.card-change[data-toggle=tab]').removeClass('active');
+        $(this).addClass('active');
+        $(this).parent().addClass('active');
+    });
 }
 
 let windowWidth = $(window).width();
 const scrollCartShoppingMobile = function () {
-	if (windowWidth < 768 && $('#shopping-cart-wrapper').length > 0) {
-		$(window).scroll(function () {
-			let top = $(document).scrollTop();
-			let heightCart = $('#shopping-cart-wrapper').offset().top - $('#shopping-cart-wrapper').innerHeight();
+    if (windowWidth < 768 && $('#shopping-cart-wrapper').length > 0) {
+        $(window).scroll(function () {
+            let top = $(document).scrollTop();
+            let heightCart = $('#shopping-cart-wrapper').offset().top - $('#shopping-cart-wrapper').innerHeight();
 
-			if (top >= heightCart) {
-				$('.fixedCart').removeClass('show');
-			} else {
-				$('.fixedCart').addClass('show');
-			}
-		});
-	}
+            if (top >= heightCart) {
+                $('.fixedCart').removeClass('show');
+            } else {
+                $('.fixedCart').addClass('show');
+            }
+        });
+    }
 
-	$('.scrollCart').click(function (e) {
-		$('body').animate({
-			'scrollTop': $('#shopping-cart-wrapper').offset().top - 60
-		}, 250)
-	});
+    $('.scrollCart').click(function (e) {
+        $('body').animate({
+            'scrollTop': $('#shopping-cart-wrapper').offset().top - 60
+        }, 250)
+    });
 }
 
 const handleTouchMove = function (ev) {
-	ev.preventDefault();
+    ev.preventDefault();
 }
 
 const navigationMobile = function (e) {
-	if (windowWidth < 992) {
-		$("#header .header-inner .header-inner_nav > ul > li > ul").each(function (index) {
-			$(this).prev().attr({
-				"href": "#subMenuTopUp" + index,
-				"data-toggle": "collapse"
-			});
-			$(this).attr({
-				"id": "subMenuTopUp" + index,
-				"class": "collapse list-unstyled mb-0",
-				"data-parent": "#hasMenuTopUp"
-			});
-		})
+    if (windowWidth < 992) {
+        $("#header .header-inner .header-inner_nav > ul > li > ul").each(function (index) {
+            $(this).prev().attr({
+                "href": "#subMenuTopUp" + index,
+                "data-toggle": "collapse"
+            });
+            $(this).attr({
+                "id": "subMenuTopUp" + index,
+                "class": "collapse list-unstyled mb-0",
+                "data-parent": "#hasMenuTopUp"
+            });
+        })
 
-		/*
-		 * Call menu mobile
-		 */
-		let body = $('body'),
-			hamburgerIcon = $('#call-header_mobile');
+        /*
+         * Call menu mobile
+         */
+        let body = $('body'),
+            hamburgerIcon = $('#call-header_mobile');
 
-		hamburgerIcon.click(function (e) {
-			if (!body.hasClass('is-show_navigation')) {
-				body.attr({
-					'class': 'is-show_navigation',
-					'style': 'overflow-y: hidden'
-				});
-				document.addEventListener('touchmove', handleTouchMove, {passive: false});
-				$('#user-mobile').removeClass('active');
-			} else {
-				body.attr({
-					'class': '',
-					'style': ''
-				});
-				document.removeEventListener('touchmove', handleTouchMove);
-			}
-		});
-	}
+        hamburgerIcon.click(function (e) {
+            if (!body.hasClass('is-show_navigation')) {
+                body.attr({
+                    'class': 'is-show_navigation',
+                    'style': 'overflow-y: hidden'
+                });
+                document.addEventListener('touchmove', handleTouchMove, {passive: false});
+                $('#user-mobile').removeClass('active');
+            } else {
+                body.attr({
+                    'class': '',
+                    'style': ''
+                });
+                document.removeEventListener('touchmove', handleTouchMove);
+            }
+        });
+    }
 }
 
 const callUserMobile = function () {
-	$('#call-user_mobile, #header-overlay').click(function () {
-		$(this).parent().toggleClass('active');
-		$('body').attr({
-			'class': '',
-			'style': ''
-		});
-		document.removeEventListener('touchmove', handleTouchMove);
-	});
+    $('#call-user_mobile, #header-overlay').click(function () {
+        $(this).parent().toggleClass('active');
+        $('body').attr({
+            'class': '',
+            'style': ''
+        });
+        document.removeEventListener('touchmove', handleTouchMove);
+    });
 
-	$(document).mouseup(function (e) {
-		let elm = $('#user-mobile');
-		elm.is(e.target) || 0 !== elm.has(e.target).length || (
-			elm.removeClass('active')
-		)
-	})
+    $(document).mouseup(function (e) {
+        let elm = $('#user-mobile');
+        elm.is(e.target) || 0 !== elm.has(e.target).length || (
+            elm.removeClass('active')
+        )
+    })
 }
 
 const headerScroll = function (e) {
-	$(window).scroll(function (e) {
-		if ($(document).scrollTop() > $('#header').innerHeight()) {
-			$('#header').addClass('is-scroll').removeClass('is-scrolled');
-		} else {
-			$('#header').removeClass('is-scroll').addClass('is-scrolled');
-		}
-	});
+    $(window).scroll(function (e) {
+        if ($(document).scrollTop() > $('#header').innerHeight()) {
+            $('#header').addClass('is-scroll').removeClass('is-scrolled');
+        } else {
+            $('#header').removeClass('is-scroll').addClass('is-scrolled');
+        }
+    });
 }
+const gameSlide = new Swiper('#swiper-games', {
+    loop: true,
+    speed: 1000,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    mousewheelControl: true,
+    keyboardControl: true,
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return `<span class="${className}">${(index + 1) < 10 ? '0' + (index + 1) : (index + 1)}</span>`;
+        },
+    },
+    autoplay: {
+        delay: 100000,
+        disableOnInteraction: false,
+    },
+    on: {
+        progress() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slideProgress = swiper.slides[i].progress;
+                var innerOffset = swiper.width * 0.5;
+                var innerTranslate = slideProgress * innerOffset;
+                swiper.slides[i].querySelector(".slide-item").style.transform =
+                    "translate3d(" + innerTranslate + "px, 0, 0)";
+            }
+        },
 
+        touchStart() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = "";
+            }
+        },
+        setTransition(templateBanner, speed) {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = speed + "ms";
+                swiper.slides[i].querySelector(".slide-item").style.transition =
+                    speed + "ms";
+            }
+        }
+    }
+});
 
 $(function () {
-	Waves.init();
-	headerScroll();
-	slideBanner();
+    Waves.init();
+    headerScroll();
+    slideBanner();
+    gameSlide();
 
-	initRowCardChange();
-	initRowCardTopUp();
-	changeTabCard();
-	scrollCartShoppingMobile();
-	navigationMobile();
-	callUserMobile();
+    initRowCardChange();
+    initRowCardTopUp();
+    changeTabCard();
+    scrollCartShoppingMobile();
+    navigationMobile();
+    callUserMobile();
 });
