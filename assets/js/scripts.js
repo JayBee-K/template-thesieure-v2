@@ -1,29 +1,29 @@
 const slideBanner = function () {
-    new Swiper('#slideBanner', {
-        loop: false,
-        simulateTouch: false,
-        speed: 250,
-        navigation: {
-            nextEl: '#slideBanner .slide-button-next',
-            prevEl: '#slideBanner .slide-button-prev',
-        },
-        autoplay: {
-            delay: 10000,
-            disableOnInteraction: false,
-        },
-        on: {
-            init: function () {
-                Waves.attach('#slideBanner .swiper-slide .btn');
-            }
-        }
-    });
+	new Swiper('#slideBanner', {
+		loop: false,
+		simulateTouch: false,
+		speed: 250,
+		navigation: {
+			nextEl: '#slideBanner .slide-button-next',
+			prevEl: '#slideBanner .slide-button-prev',
+		},
+		autoplay: {
+			delay: 10000,
+			disableOnInteraction: false,
+		},
+		on: {
+			init: function () {
+				Waves.attach('#slideBanner .swiper-slide .btn');
+			}
+		}
+	});
 }
 
 
 const initRowCardChange = function () {
-    let elm = $('#form-expandCard_Change');
-    elm.find('.createRow').click(function () {
-        html = `<div class="row row-10 mb-3 align-items-center">
+	let elm = $('#form-expandCard_Change');
+	elm.find('.createRow').click(function () {
+		html = `<div class="row row-10 mb-3 align-items-center">
 									<div class="col-md-3">
 										<div class="form-group">
 											<select class="form-control" id="network">
@@ -69,17 +69,17 @@ const initRowCardChange = function () {
 										</a>
 									</div>
 								</div>`;
-        $('#form-expandCard_Change').append(html)
-    });
+		$('#form-expandCard_Change').append(html)
+	});
 
-    elm.on('click', '.deleteRow', function () {
-        $(this).closest('.row').remove();
-    });
+	elm.on('click', '.deleteRow', function () {
+		$(this).closest('.row').remove();
+	});
 }
 const initRowCardTopUp = function () {
-    let elm = $('#form-expandCard_TopUp');
-    elm.on('click', '.createRow', function () {
-        html = `<div class="row row-10 mb-3 align-items-center">
+	let elm = $('#form-expandCard_TopUp');
+	elm.on('click', '.createRow', function () {
+		html = `<div class="row row-10 mb-3 align-items-center">
 								<div class="col-md-2">
 									<div class="form-group">
 										<input type="tel" minlength="10" maxlength="11" class="form-control" id="sdt"
@@ -137,197 +137,197 @@ const initRowCardTopUp = function () {
 									</a>
 								</div>
 							</div>`;
-        $('#form-expandCard_TopUp').append(html)
-    });
+		$('#form-expandCard_TopUp').append(html)
+	});
 
-    elm.on('click', '.deleteRow', function () {
-        $(this).closest('.row').remove();
-    });
+	elm.on('click', '.deleteRow', function () {
+		$(this).closest('.row').remove();
+	});
 }
 
 const changeTabCard = function (e) {
-    $('.card-change[data-toggle=tab]').on('shown.bs.tab', function () {
-        $('.card-change[data-toggle=tab]').removeClass('active');
-        $(this).addClass('active');
-        $(this).parent().addClass('active');
-    });
+	$('.card-change[data-toggle=tab]').on('shown.bs.tab', function () {
+		$('.card-change[data-toggle=tab]').removeClass('active');
+		$(this).addClass('active');
+		$(this).parent().addClass('active');
+	});
 }
 
 let windowWidth = $(window).width();
 const scrollCartShoppingMobile = function () {
-    if (windowWidth < 768 && $('#shopping-cart-wrapper').length > 0) {
-        $(window).scroll(function () {
-            let top = $(document).scrollTop();
-            let heightCart = $('#shopping-cart-wrapper').offset().top - $('#shopping-cart-wrapper').innerHeight();
+	if (windowWidth < 768 && $('#shopping-cart-wrapper').length > 0) {
+		$(window).scroll(function () {
+			let top = $(document).scrollTop();
+			let heightCart = $('#shopping-cart-wrapper').offset().top - $('#shopping-cart-wrapper').innerHeight();
 
-            if (top >= heightCart) {
-                $('.fixedCart').removeClass('show');
-            } else {
-                $('.fixedCart').addClass('show');
-            }
-        });
-    }
+			if (top >= heightCart) {
+				$('.fixedCart').removeClass('show');
+			} else {
+				$('.fixedCart').addClass('show');
+			}
+		});
+	}
 
-    $('.scrollCart').click(function (e) {
-        $('body').animate({
-            'scrollTop': $('#shopping-cart-wrapper').offset().top - 60
-        }, 250)
-    });
+	$('.scrollCart').click(function (e) {
+		$('body').animate({
+			'scrollTop': $('#shopping-cart-wrapper').offset().top - 60
+		}, 250)
+	});
 }
 
 const handleTouchMove = function (ev) {
-    ev.preventDefault();
+	ev.preventDefault();
 }
 
 const navigationMobile = function (e) {
-    if (windowWidth < 992) {
-        $("#header .header-inner .header-inner_nav > ul > li > ul").each(function (index) {
-            $(this).prev().attr({
-                "href": "#subMenuTopUp" + index,
-                "data-toggle": "collapse"
-            });
-            $(this).attr({
-                "id": "subMenuTopUp" + index,
-                "class": "collapse list-unstyled mb-0",
-                "data-parent": "#hasMenuTopUp"
-            });
-        })
+	if (windowWidth < 992) {
+		$("#header .header-inner .header-inner_nav > ul > li > ul").each(function (index) {
+			$(this).prev().attr({
+				"href": "#subMenuTopUp" + index,
+				"data-toggle": "collapse"
+			});
+			$(this).attr({
+				"id": "subMenuTopUp" + index,
+				"class": "collapse list-unstyled mb-0",
+				"data-parent": "#hasMenuTopUp"
+			});
+		})
 
-        /*
-         * Call menu mobile
-         */
-        let body = $('body'),
-            hamburgerIcon = $('#call-header_mobile');
+		/*
+		 * Call menu mobile
+		 */
+		let body = $('body'),
+			hamburgerIcon = $('#call-header_mobile');
 
-        hamburgerIcon.click(function (e) {
-            if (!body.hasClass('is-show_navigation')) {
-                body.attr({
-                    'class': 'is-show_navigation',
-                    'style': 'overflow-y: hidden'
-                });
-                document.addEventListener('touchmove', handleTouchMove, {passive: false});
-                $('#user-mobile').removeClass('active');
-            } else {
-                body.attr({
-                    'class': '',
-                    'style': ''
-                });
-                document.removeEventListener('touchmove', handleTouchMove);
-            }
-        });
-    }
+		hamburgerIcon.click(function (e) {
+			if (!body.hasClass('is-show_navigation')) {
+				body.attr({
+					'class': 'is-show_navigation',
+					'style': 'overflow-y: hidden'
+				});
+				document.addEventListener('touchmove', handleTouchMove, {passive: false});
+				$('#user-mobile').removeClass('active');
+			} else {
+				body.attr({
+					'class': '',
+					'style': ''
+				});
+				document.removeEventListener('touchmove', handleTouchMove);
+			}
+		});
+	}
 }
 
 const callUserMobile = function () {
-    $('#call-user_mobile, #header-overlay').click(function () {
-        $(this).parent().toggleClass('active');
-        $('body').attr({
-            'class': '',
-            'style': ''
-        });
-        document.removeEventListener('touchmove', handleTouchMove);
-    });
+	$('#call-user_mobile, #header-overlay').click(function () {
+		$(this).parent().toggleClass('active');
+		$('body').attr({
+			'class': '',
+			'style': ''
+		});
+		document.removeEventListener('touchmove', handleTouchMove);
+	});
 
-    $(document).mouseup(function (e) {
-        let elm = $('#user-mobile');
-        elm.is(e.target) || 0 !== elm.has(e.target).length || (
-            elm.removeClass('active')
-        )
-    })
+	$(document).mouseup(function (e) {
+		let elm = $('#user-mobile');
+		elm.is(e.target) || 0 !== elm.has(e.target).length || (
+			elm.removeClass('active')
+		)
+	})
 }
 
 const headerScroll = function (e) {
-    $(window).scroll(function (e) {
-        if ($(document).scrollTop() > $('#header').innerHeight()) {
-            $('#header').addClass('is-scroll').removeClass('is-scrolled');
-        } else {
-            $('#header').removeClass('is-scroll').addClass('is-scrolled');
-        }
-    });
+	$(window).scroll(function (e) {
+		if ($(document).scrollTop() > $('#header').innerHeight()) {
+			$('#header').addClass('is-scroll').removeClass('is-scrolled');
+		} else {
+			$('#header').removeClass('is-scroll').addClass('is-scrolled');
+		}
+	});
 }
 const gameSlide = function () {
-    new Swiper('#swiper-games', {
-        loop: true,
-        speed: 1000,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
-        mousewheelControl: true,
-        keyboardControl: true,
-        slidesPerView: 1,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            renderBullet: function (index, className) {
-                return `<span class="${className}">${(index + 1) < 10 ? '0' + (index + 1) : (index + 1)}</span>`;
-            },
-        },
-        autoplay: {
-            delay: 100000,
-            disableOnInteraction: false,
-        },
-        on: {
-            progress() {
-                var swiper = this;
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    var slideProgress = swiper.slides[i].progress;
-                    var innerOffset = swiper.width * 0.5;
-                    var innerTranslate = slideProgress * innerOffset;
-                    swiper.slides[i].querySelector(".slide-item").style.transform =
-                        "translate3d(" + innerTranslate + "px, 0, 0)";
-                }
-            },
+	new Swiper('#swiper-games', {
+		loop: true,
+		speed: 1000,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		mousewheelControl: true,
+		keyboardControl: true,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			renderBullet: function (index, className) {
+				return `<span class="${className}">${(index + 1) < 10 ? '0' + (index + 1) : (index + 1)}</span>`;
+			},
+		},
+		autoplay: {
+			delay: 100000,
+			disableOnInteraction: false,
+		},
+		on: {
+			progress() {
+				var swiper = this;
+				for (var i = 0; i < swiper.slides.length; i++) {
+					var slideProgress = swiper.slides[i].progress;
+					var innerOffset = swiper.width * 0.5;
+					var innerTranslate = slideProgress * innerOffset;
+					swiper.slides[i].querySelector(".slide-item").style.transform =
+						"translate3d(" + innerTranslate + "px, 0, 0)";
+				}
+			},
 
-            touchStart() {
-                var swiper = this;
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    swiper.slides[i].style.transition = "";
-                }
-            },
-            setTransition(templateBanner, speed) {
-                var swiper = this;
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    swiper.slides[i].style.transition = speed + "ms";
-                    swiper.slides[i].querySelector(".slide-item").style.transition =
-                        speed + "ms";
-                }
-            }
-        }
-    });
+			touchStart() {
+				var swiper = this;
+				for (var i = 0; i < swiper.slides.length; i++) {
+					swiper.slides[i].style.transition = "";
+				}
+			},
+			setTransition(templateBanner, speed) {
+				var swiper = this;
+				for (var i = 0; i < swiper.slides.length; i++) {
+					swiper.slides[i].style.transition = speed + "ms";
+					swiper.slides[i].querySelector(".slide-item").style.transition =
+						speed + "ms";
+				}
+			}
+		}
+	});
 }
 
 $(function () {
-    Waves.init();
-    headerScroll();
-    slideBanner();
-    gameSlide();
+	Waves.init();
+	headerScroll();
+	slideBanner();
+	gameSlide();
 
-    initRowCardChange();
-    initRowCardTopUp();
-    changeTabCard();
-    scrollCartShoppingMobile();
-    navigationMobile();
-    callUserMobile();
+	initRowCardChange();
+	initRowCardTopUp();
+	changeTabCard();
+	scrollCartShoppingMobile();
+	navigationMobile();
+	callUserMobile();
 
-    // Địa điểm - Đi & đến
-    $('.flight-select').each(function () {
-        dropdownParent = $(this).parents('.inner');
-        $(this).select2({
-            dropdownParent: dropdownParent,
-            placeholder: "Chọn địa điểm",
-            templateResult: styleSelect,
-            width: '100%',
-        });
-    });
+	// Địa điểm - Đi & đến
+	$('.flight-select').each(function () {
+		dropdownParent = $(this).parents('.inner');
+		$(this).select2({
+			dropdownParent: dropdownParent,
+			placeholder: "Chọn địa điểm",
+			templateResult: styleSelect,
+			width: '100%',
+		});
+	});
 
-    function styleSelect(attrElm) {
-        if (!attrElm.id) {
-            return attrElm.text;
-        }
-        let html = $(`<div class="d-flex align-items-center">
+	function styleSelect(attrElm) {
+		if (!attrElm.id) {
+			return attrElm.text;
+		}
+		let html = $(`<div class="d-flex align-items-center">
                         <div class="sel-icon">
                             <i class="fal ${attrElm.title.split("|")[3]} mb-0 h6"></i>
                         </div>
@@ -340,54 +340,54 @@ $(function () {
 	                    </div>
                     </div>`);
 
-        return html;
-    }
+		return html;
+	}
 
-    const altFormat = "d-m-Y";
-    /***
-     *
-     * Chuyến bay
-     */
-    const departureFlatpickrConfig = {
-        defaultDate: [Date.now()],
-        mode: "single",
-        locale: "vn",
-        altInput: true,
-        altFormat: altFormat,
-        showMonths: 2,
-        minDate: "today",
-        onOpen: function (selectedDates, dateStr, instance) {
-            dateDeparture.set('positionElement', $("#date-departure")[0]);
-            dateDeparture.set("mode", "single");
-        },
-    };
-    const returnFlatpickrConfig = {
-        defaultDate: [Date.now()],
-        mode: "single",
-        locale: "vn",
-        altInput: true,
-        altFormat: altFormat,
-        showMonths: 2,
-        minDate: "today",
-        onOpen: function (selectedDates, dateStr, instance) {
-            dateDeparture.set('positionElement', $("#date-return")[0]);
-            dateReturn.set("mode", "single");
-        },
-        onChange: function (selectedDates, dateStr, instance) {
-            const [departure_val, return_val] = selectedDates;
-            if (return_val) {
-                const checkOutDate = flatpickr.formatDate(return_val, altFormat);
-            }
-        },
-    };
+	const altFormat = "d-m-Y";
+	/***
+	 *
+	 * Chuyến bay
+	 */
+	const departureFlatpickrConfig = {
+		defaultDate: [Date.now()],
+		mode: "single",
+		locale: "vn",
+		altInput: true,
+		altFormat: altFormat,
+		showMonths: 2,
+		minDate: "today",
+		onOpen: function (selectedDates, dateStr, instance) {
+			dateDeparture.set('positionElement', $("#date-departure")[0]);
+			dateDeparture.set("mode", "single");
+		},
+	};
+	const returnFlatpickrConfig = {
+		defaultDate: [Date.now()],
+		mode: "single",
+		locale: "vn",
+		altInput: true,
+		altFormat: altFormat,
+		showMonths: 2,
+		minDate: "today",
+		onOpen: function (selectedDates, dateStr, instance) {
+			dateDeparture.set('positionElement', $("#date-return")[0]);
+			dateReturn.set("mode", "single");
+		},
+		onChange: function (selectedDates, dateStr, instance) {
+			const [departure_val, return_val] = selectedDates;
+			if (return_val) {
+				const checkOutDate = flatpickr.formatDate(return_val, altFormat);
+			}
+		},
+	};
 
-    dateDeparture = $("#date-departure").flatpickr(departureFlatpickrConfig);
+	dateDeparture = $("#date-departure").flatpickr(departureFlatpickrConfig);
 
-    let htmlRender = '';
-    let dateReturn = '';
-    $('input[name="choose-flight_chuyenbay"]').change(function (e) {
-        if ($('#choose-flight-02:checked').length > 0) {
-            htmlRender = `<div class="col col-custom" id="col-mark_chuyenbay__return">
+	let htmlRender = '';
+	let dateReturn = '';
+	$('input[name="choose-flight_chuyenbay"]').change(function (e) {
+		if ($('#choose-flight-02:checked').length > 0) {
+			htmlRender = `<div class="col col-custom" id="col-mark_chuyenbay__return">
 							<div class="inner position-relative trigger-flat_chuyenbay" data-calendar="2">
 								<label  for="">Ngày trở về</label>
 								<div class="d-flex align-items-center box-inner">
@@ -399,455 +399,217 @@ $(function () {
 							</div>
 						</div>`;
 
-            $('#col-mark_chuyenbay').after(htmlRender);
-            dateReturn = $("#date-return").flatpickr(returnFlatpickrConfig);
-        } else {
-            htmlRender = ``;
-            $('#col-mark_chuyenbay__return').remove();
-        }
-    });
+			$('#col-mark_chuyenbay').after(htmlRender);
+			dateReturn = $("#date-return").flatpickr(returnFlatpickrConfig);
+		} else {
+			htmlRender = ``;
+			$('#col-mark_chuyenbay__return').remove();
+		}
+	});
 
-    $(document).on('click', '.trigger-flat_chuyenbay', function () {
-        if ($(this).data('calendar') == 1)
-            dateDeparture.open();
-        else
-            dateReturn.open();
-    });
+	$(document).on('click', '.trigger-flat_chuyenbay', function () {
+		if ($(this).data('calendar') == 1)
+			dateDeparture.open();
+		else
+			dateReturn.open();
+	});
 
-    addEventCounterActions(
-        ".passenger-event_chuyenbay",
-        ".value-count-baby_chuyenbay",
-        "#total-people_chuyenbay",
-        plusCounterHandle,
-        minusCounterHandle
-    );
+	addEventCounterActions(
+		".passenger-event_chuyenbay",
+		".value-count-baby_chuyenbay",
+		"#total-people_chuyenbay",
+		plusCounterHandle,
+		minusCounterHandle
+	);
 
-    function checkMaxPeople(
-        inputCounterElement,
-        count,
-        countBaby,
-        totalCount,
-        maxPeople,
-        maxBaby
-    ) {
-        if (
-            (inputCounterElement.hasClass("value-count-baby_chuyenbay") && count >= maxBaby) ||
-            (!inputCounterElement.hasClass("value-count-baby_chuyenbay") &&
-                totalCount - countBaby >= maxPeople)
-        ) {
-            return true;
-        }
+	function checkMaxPeople(
+		inputCounterElement,
+		count,
+		countBaby,
+		totalCount,
+		maxPeople,
+		maxBaby
+	) {
+		if (
+			(inputCounterElement.hasClass("value-count-baby_chuyenbay") && count >= maxBaby) ||
+			(!inputCounterElement.hasClass("value-count-baby_chuyenbay") &&
+				totalCount - countBaby >= maxPeople)
+		) {
+			return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    function plusCounterHandle(
-        inputCounterElement,
-        htmlCounterElement,
-        plusCounterElement,
-        minusCounterElement,
-        counterBabyElement,
-        totalCounterElement
-    ) {
-        let count = inputCounterElement.val();
-        let countBaby = counterBabyElement.val();
-        let countText = htmlCounterElement.html();
-        let totalCount = totalCounterElement.html();
-        totalCount = Number(totalCount);
-        count = Number(count);
-        countBaby = Number(countBaby);
+	function plusCounterHandle(
+		inputCounterElement,
+		htmlCounterElement,
+		plusCounterElement,
+		minusCounterElement,
+		counterBabyElement,
+		totalCounterElement
+	) {
+		let count = inputCounterElement.val();
+		let countBaby = counterBabyElement.val();
+		let countText = htmlCounterElement.html();
+		let totalCount = totalCounterElement.html();
+		totalCount = Number(totalCount);
+		count = Number(count);
+		countBaby = Number(countBaby);
 
-        if (
-            checkMaxPeople(inputCounterElement, count, countBaby, totalCount, 9, 4)
-        ) {
-            return;
-        }
+		if (
+			checkMaxPeople(inputCounterElement, count, countBaby, totalCount, 9, 4)
+		) {
+			return;
+		}
 
-        totalCount += 1;
-        count += 1;
-        countText = count;
+		totalCount += 1;
+		count += 1;
+		countText = count;
 
-        minusCounterElement.removeClass("disabled");
+		minusCounterElement.removeClass("disabled");
 
-        inputCounterElement.val(count);
-        htmlCounterElement.html(countText);
-        totalCounterElement.html(totalCount);
+		inputCounterElement.val(count);
+		htmlCounterElement.html(countText);
+		totalCounterElement.html(totalCount);
 
-        if (
-            checkMaxPeople(inputCounterElement, count, countBaby, totalCount, 9, 4)
-        ) {
-            plusCounterElement.addClass("disabled");
-        }
-    }
+		if (
+			checkMaxPeople(inputCounterElement, count, countBaby, totalCount, 9, 4)
+		) {
+			plusCounterElement.addClass("disabled");
+		}
+	}
 
-    function minusCounterHandle(
-        inputCounterElement,
-        htmlCounterElement,
-        plusCounterElement,
-        minusCounterElement,
-        counterBabyElement,
-        totalCounterElement
-    ) {
-        let count = inputCounterElement.val();
-        let countBaby = counterBabyElement.val();
-        let countText = htmlCounterElement.html();
-        let totalCount = totalCounterElement.html();
-        totalCount = Number(totalCount);
-        count = Number(count);
-        countBaby = Number(countBaby);
+	function minusCounterHandle(
+		inputCounterElement,
+		htmlCounterElement,
+		plusCounterElement,
+		minusCounterElement,
+		counterBabyElement,
+		totalCounterElement
+	) {
+		let count = inputCounterElement.val();
+		let countBaby = counterBabyElement.val();
+		let countText = htmlCounterElement.html();
+		let totalCount = totalCounterElement.html();
+		totalCount = Number(totalCount);
+		count = Number(count);
+		countBaby = Number(countBaby);
 
-        if (count <= 0 || totalCount <= 1) {
-            return;
-        }
+		if (count <= 0 || totalCount <= 1) {
+			return;
+		}
 
-        if (
-            checkMaxPeople(inputCounterElement, count, countBaby, totalCount, 9, 4)
-        ) {
-            plusCounterElement.removeClass("disabled");
-        }
+		if (
+			checkMaxPeople(inputCounterElement, count, countBaby, totalCount, 9, 4)
+		) {
+			plusCounterElement.removeClass("disabled");
+		}
 
-        count -= 1;
-        countText = count;
-        totalCount -= 1;
+		count -= 1;
+		countText = count;
+		totalCount -= 1;
 
-        inputCounterElement.val(count);
-        htmlCounterElement.html(countText);
-        totalCounterElement.html(totalCount);
+		inputCounterElement.val(count);
+		htmlCounterElement.html(countText);
+		totalCounterElement.html(totalCount);
 
-        if (count <= 0) {
-            minusCounterElement.addClass("disabled");
-        }
-    }
+		if (count <= 0) {
+			minusCounterElement.addClass("disabled");
+		}
+	}
 
-    function prepareCounterElements(
-        parentCounterElement,
-        counterBabyElement,
-        totalCounterElement,
-        handleCounter
-    ) {
-        const inputCounterElement = parentCounterElement.find(
-            ".value-passenger-counter_chuyenbay"
-        );
-        const htmlCounterElement = parentCounterElement.find(
-            ".passenger-counter_chuyenbay"
-        );
+	function prepareCounterElements(
+		parentCounterElement,
+		counterBabyElement,
+		totalCounterElement,
+		handleCounter
+	) {
+		const inputCounterElement = parentCounterElement.find(
+			".value-passenger-counter_chuyenbay"
+		);
+		const htmlCounterElement = parentCounterElement.find(
+			".passenger-counter_chuyenbay"
+		);
 
-        const minusCounterElement = parentCounterElement.find(
-            ".passenger-minus_chuyenbay"
-        );
+		const minusCounterElement = parentCounterElement.find(
+			".passenger-minus_chuyenbay"
+		);
 
-        const plusCounterElement = parentCounterElement.find(
-            ".passenger-plus_chuyenbay"
-        );
+		const plusCounterElement = parentCounterElement.find(
+			".passenger-plus_chuyenbay"
+		);
 
-        return handleCounter(
-            inputCounterElement,
-            htmlCounterElement,
-            plusCounterElement,
-            minusCounterElement,
-            counterBabyElement,
-            totalCounterElement
-        );
-    }
+		return handleCounter(
+			inputCounterElement,
+			htmlCounterElement,
+			plusCounterElement,
+			minusCounterElement,
+			counterBabyElement,
+			totalCounterElement
+		);
+	}
 
-    function addEventCounterActions(
-        counterClass,
-        counterBabyClass,
-        totalCounterId,
-        plusCounterHandle,
-        minusCounterHandle
-    ) {
-        const totalCounterElement = $(totalCounterId);
-        $(counterClass).on("click", ".passenger-plus_chuyenbay", function () {
-            const parentCounterElement = $(this).parents(counterClass);
-            const counterBabyElement = parentCounterElement
-                .parents(".passenger-dropdown-container")
-                .find(counterBabyClass);
-            prepareCounterElements(
-                parentCounterElement,
-                counterBabyElement,
-                totalCounterElement,
-                plusCounterHandle
-            );
-        });
-        $(counterClass).on("click", ".passenger-minus_chuyenbay", function () {
-            const parentCounterElement = $(this).parents(counterClass);
-            const counterBabyElement = parentCounterElement
-                .parents(".passenger-dropdown-container")
-                .find(counterBabyClass);
-            prepareCounterElements(
-                parentCounterElement,
-                counterBabyElement,
-                totalCounterElement,
-                minusCounterHandle
-            );
-        });
-    }
+	function addEventCounterActions(
+		counterClass,
+		counterBabyClass,
+		totalCounterId,
+		plusCounterHandle,
+		minusCounterHandle
+	) {
+		const totalCounterElement = $(totalCounterId);
+		$(counterClass).on("click", ".passenger-plus_chuyenbay", function () {
+			const parentCounterElement = $(this).parents(counterClass);
+			const counterBabyElement = parentCounterElement
+				.parents(".passenger-dropdown-container")
+				.find(counterBabyClass);
+			prepareCounterElements(
+				parentCounterElement,
+				counterBabyElement,
+				totalCounterElement,
+				plusCounterHandle
+			);
+		});
+		$(counterClass).on("click", ".passenger-minus_chuyenbay", function () {
+			const parentCounterElement = $(this).parents(counterClass);
+			const counterBabyElement = parentCounterElement
+				.parents(".passenger-dropdown-container")
+				.find(counterBabyClass);
+			prepareCounterElements(
+				parentCounterElement,
+				counterBabyElement,
+				totalCounterElement,
+				minusCounterHandle
+			);
+		});
+	}
 
-    /***
-     * End Chuyến bay
-     */
+	/***
+	 * End Chuyến bay
+	 */
 
-    /***
-     * Vé đoàn
-     */
+	$(".passenger-dropdown").click(function () {
+		$(".passenger-dropdown-content").fadeIn();
+	});
 
-    const departureVeDoanFlatpickrConfig = {
-        defaultDate: [Date.now()],
-        mode: "single",
-        locale: "vn",
-        altInput: true,
-        altFormat: altFormat,
-        showMonths: 2,
-        minDate: "today",
-        onOpen: function (selectedDates, dateStr, instance) {
-            dateDeparture.set('positionElement', $("#date-departure_vedoan")[0]);
-            dateDeparture.set("mode", "single");
-        },
-    };
-    const returnVeDoanFlatpickrConfig = {
-        defaultDate: [Date.now()],
-        mode: "single",
-        locale: "vn",
-        altInput: true,
-        altFormat: altFormat,
-        showMonths: 2,
-        minDate: "today",
-        onOpen: function (selectedDates, dateStr, instance) {
-            dateDeparture.set('positionElement', $("#date-return_vedoan")[0]);
-            dateReturn.set("mode", "single");
-        },
-        onChange: function (selectedDates, dateStr, instance) {
-            const [departure_val, return_val] = selectedDates;
-            if (return_val) {
-                const checkOutDate = flatpickr.formatDate(return_val, altFormat);
-            }
-        },
-    };
+	$(".passenger-close").click(function (e) {
+		e.stopPropagation();
+		$(".passenger-dropdown-content").fadeOut();
+	});
 
-    dateVeDoanDeparture = $("#date-departure_vedoan").flatpickr(departureFlatpickrConfig);
+	$(document).on("mouseup", function (e) {
+		var o = $(".form-choose-people");
+		o.is(e.target) || 0 !== o.has(e.target).length || (
+			$(".passenger-dropdown .passenger-dropdown-content").fadeOut())
+	});
 
-    let htmlRenderVeDoan = '';
-    let dateReturnVeDoan = '';
-    $('input[name="choose-flight_vedoan"]').change(function (e) {
-        if ($('#choose-flight_vedoan-02:checked').length > 0) {
-            htmlRenderVeDoan = `<div class="col" id="col-mark_vedoan__return">
-							<div class="inner position-relative trigger-flat_vedoan" data-calendar="2">
-								<label  for="">Ngày trở về</label>
-								<div class="d-flex align-items-center box-inner">
-									<i class="fad fa-calendar-alt"></i>
-									<input type="text" placeholder="Departure Date"
-									       class="border-0 rounded-0 py-0 bg-transparent form-control form-date flatpickr flatpickr-input"
-									       id="date-return_vedoan"/>
-								</div>
-							</div>
-						</div>`;
+	$('.trigger-select').on("click", function () {
+		$(this).find('.box-inner select').select2('open');
+	});
 
-            $('#col-mark_vedoan').after(htmlRenderVeDoan);
-            dateReturnVeDoan = $("#date-return_vedoan").flatpickr(returnFlatpickrConfig);
-        } else {
-            htmlRenderVeDoan = ``;
-            $('#col-mark_vedoan__return').remove();
-        }
-    });
-
-    $(document).on('click', '.trigger-flat_vedoan', function () {
-        if ($(this).data('calendar') == 1)
-            dateVeDoanDeparture.open();
-        else
-            dateReturnVeDoan.open();
-    });
-
-    addEventCounterActionsVeDoan(
-        ".passenger-event_vedoan",
-        ".value-count-baby_vedoan",
-        "#total-people_vedoan",
-        plusCounterHandleVeDoan,
-        minusCounterHandleVeDoan
-    );
-
-    function checkMaxPeopleVeDoan(
-        inputCounterElementVeDoan,
-        countVeDoan,
-        countBabyVeDoan,
-        totalCountVeDoan,
-        maxPeopleVeDoan,
-        maxBabyVeDoan
-    ) {
-        if (
-            (inputCounterElementVeDoan.hasClass("value-count-baby_vedoan") && countVeDoan >= maxBabyVeDoan) ||
-            (!inputCounterElementVeDoan.hasClass("value-count-baby_vedoan") &&
-                totalCountVeDoan - countBabyVeDoan >= maxPeopleVeDoan)
-        ) {
-            return true;
-        }
-
-        return false;
-    }
-
-    function plusCounterHandleVeDoan(
-        inputCounterElementVeDoan,
-        htmlCounterElementVeDoan,
-        plusCounterElementVeDoan,
-        minusCounterElementVeDoan,
-        counterBabyElementVeDoan,
-        totalCounterElementVeDoan
-    ) {
-        let countVeDoan = inputCounterElementVeDoan.val();
-        let countBabyVeDoan = counterBabyElementVeDoan.val();
-        let countTextVeDoan = htmlCounterElementVeDoan.html();
-        let totalCountVeDoan = totalCounterElementVeDoan.html();
-        totalCountVeDoan = Number(totalCountVeDoan);
-        countVeDoan = Number(countVeDoan);
-        countBabyVeDoan = Number(countBabyVeDoan);
-
-        if (
-            checkMaxPeopleVeDoan(inputCounterElementVeDoan, countVeDoan, countBabyVeDoan, totalCountVeDoan, 9, 4)
-        ) {
-            return;
-        }
-
-        totalCountVeDoan += 1;
-        countVeDoan += 1;
-        countTextVeDoan = countVeDoan;
-
-        minusCounterElementVeDoan.removeClass("disabled");
-
-        inputCounterElementVeDoan.val(countVeDoan);
-        htmlCounterElementVeDoan.html(countTextVeDoan);
-        totalCounterElementVeDoan.html(totalCountVeDoan);
-
-        if (
-            checkMaxPeopleVeDoan(inputCounterElementVeDoan, countVeDoan, countBabyVeDoan, totalCountVeDoan, 9, 4)
-        ) {
-            plusCounterElementVeDoan.addClass("disabled");
-        }
-    }
-
-    function minusCounterHandleVeDoan(
-        inputCounterElementVeDoan,
-        htmlCounterElementVeDoan,
-        plusCounterElementVeDoan,
-        minusCounterElementVeDoan,
-        counterBabyElementVeDoan,
-        totalCounterElementVeDoan
-    ) {
-        let countVeDoan = inputCounterElementVeDoan.val();
-        let countBabyVeDoan = counterBabyElementVeDoan.val();
-        let countTextVeDoan = htmlCounterElementVeDoan.html();
-        let totalCountVeDoan = totalCounterElementVeDoan.html();
-        totalCountVeDoan = Number(totalCountVeDoan);
-        countVeDoan = Number(countVeDoan);
-        countBabyVeDoan = Number(countBabyVeDoan);
-
-        if (countVeDoan <= 0 || totalCountVeDoan <= 1) {
-            return;
-        }
-
-        if (
-            checkMaxPeopleVeDoan(inputCounterElementVeDoan, countVeDoan, countBabyVeDoan, totalCountVeDoan, 9, 4)
-        ) {
-            plusCounterElementVeDoan.removeClass("disabled");
-        }
-
-        countVeDoan -= 1;
-        countTextVeDoan = countVeDoan;
-        totalCountVeDoan -= 1;
-
-        inputCounterElementVeDoan.val(countVeDoan);
-        htmlCounterElementVeDoan.html(countTextVeDoan);
-        totalCounterElementVeDoan.html(totalCountVeDoan);
-
-        if (countVeDoan <= 0) {
-            minusCounterElementVeDoan.addClass("disabled");
-        }
-    }
-
-    function prepareCounterElementsVeDoan(
-        parentCounterElementVeDoan,
-        counterBabyElementVeDoan,
-        totalCounterElementVeDoan,
-        handleCounterVeDoan
-    ) {
-        const inputCounterElementVeDoan = parentCounterElementVeDoan.find(
-            ".value-passenger-counter_vedoan"
-        );
-        const htmlCounterElementVeDoan = parentCounterElementVeDoan.find(
-            ".passenger-counter_vedoan"
-        );
-
-        const minusCounterElementVeDoan = parentCounterElementVeDoan.find(
-            ".passenger-minus_vedoan"
-        );
-
-        const plusCounterElementVeDoan = parentCounterElementVeDoan.find(
-            ".passenger-plus_vedoan"
-        );
-
-        return handleCounterVeDoan(
-            inputCounterElementVeDoan,
-            htmlCounterElementVeDoan,
-            plusCounterElementVeDoan,
-            minusCounterElementVeDoan,
-            counterBabyElementVeDoan,
-            totalCounterElementVeDoan
-        );
-    }
-
-    function addEventCounterActionsVeDoan(
-        counterClassVeDoan,
-        counterBabyClassVeDoan,
-        totalCounterIdVeDoan,
-        plusCounterHandleVeDoan,
-        minusCounterHandleVeDoan
-    ) {
-        const totalCounterElementVeDoan = $(totalCounterIdVeDoan);
-        $(counterClassVeDoan).on("click", ".passenger-plus_vedoan", function () {
-            const parentCounterElementVeDoan = $(this).parents(counterClassVeDoan);
-            const counterBabyElementVeDoan = parentCounterElementVeDoan
-                .parents(".passenger-dropdown-container")
-                .find(counterBabyClassVeDoan);
-            prepareCounterElementsVeDoan(
-                parentCounterElementVeDoan,
-                counterBabyElementVeDoan,
-                totalCounterElementVeDoan,
-                plusCounterHandleVeDoan
-            );
-        });
-        $(counterClassVeDoan).on("click", ".passenger-minus_vedoan", function () {
-            const parentCounterElementVeDoan = $(this).parents(counterClassVeDoan);
-            const counterBabyElementVeDoan = parentCounterElementVeDoan
-                .parents(".passenger-dropdown-container")
-                .find(counterBabyClassVeDoan);
-            prepareCounterElementsVeDoan(
-                parentCounterElementVeDoan,
-                counterBabyElementVeDoan,
-                totalCounterElementVeDoan,
-                minusCounterHandleVeDoan
-            );
-        });
-    }
-
-    /***
-     * End Vé đoàn
-     */
-
-    $(".passenger-dropdown").click(function () {
-        $(".passenger-dropdown-content").fadeIn();
-    });
-
-    $(".passenger-close").click(function (e) {
-        e.stopPropagation();
-        $(".passenger-dropdown-content").fadeOut();
-    });
-
-    $(document).on("mouseup", function (e) {
-        var o = $(".form-choose-people");
-        o.is(e.target) || 0 !== o.has(e.target).length || (
-            $(".passenger-dropdown .passenger-dropdown-content").fadeOut())
-    });
-
-    $('.trigger-select').on("click", function () {
-        $(this).find('.box-inner select').select2('open');
-    });
+	$('.handlePrevent').each(function () {
+		$(this).click(function (e) {
+			e.preventDefault();
+		})
+	});
 });
