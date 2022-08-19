@@ -1694,7 +1694,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
 }
 
 .card-mobile-item .card-header img {
@@ -1711,8 +1710,7 @@ body {
 
 .card-mobile-item .card-body > a {
     color: var(--color-dark);
-    font-size: 1.15em;
-    font-weight: 700;
+    font-size: 1em;
 }
 
 .card-mobile-item:hover {
@@ -2349,15 +2347,15 @@ body {
 .card-change {
     background: var(--white);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     transition: .3s all ease;
     display: block;
     align-content: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     overflow: hidden;
-    padding: 15px;
+    /*padding: 15px;*/
     text-align: center;
     cursor: pointer;
 }
@@ -3771,4 +3769,49 @@ body {
 
 .flatpickr-day.today {
     border-color: var(--primary-color);
+}
+
+.card-change_new {
+    transition: .3s all ease;
+}
+
+.card-change_new .card-change {
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.card-change_new .card-change img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+}
+
+.card-change_new .card-change_title {
+    text-align: center;
+    padding: 8px 5px 5px;
+}
+
+.card-change_new .card-change_title > a {
+    color: var(--color-dark);
+    font-size: 1em;
+}
+
+.card-change_new:hover {
+    transform: translateY(-3px);
+}
+
+.card-change_new:hover .card-change_title > a {
+    color: var(--secondary-color);
+}
+
+.card-change_new:hover .card-change img {
+    opacity: .9;
+}
+
+@media screen and (max-width: 991px) {
+    .section-tab .nav-tabs {
+        justify-content: center;
+    }
 }
