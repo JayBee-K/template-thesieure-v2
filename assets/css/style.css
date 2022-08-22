@@ -3777,7 +3777,7 @@ body {
     font-size: 14px;
 }
 
-.section-flight + .section-flight{
+.section-flight + .section-flight {
     margin-top: 25px;
 }
 
@@ -4644,8 +4644,27 @@ body {
     opacity: .9;
 }
 
+.section-tab .nav-tabs .nav-item .nav-link {
+    border-radius: 4px;
+}
+
 @media screen and (max-width: 991px) {
     .section-tab .nav-tabs {
-        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .section-tab .nav-tabs .nav-item {
+        margin-right: 8px;
+        margin-bottom: 8px;
+        margin-left: 0 !important;
+    }
+
+    .section-tab .nav-tabs .nav-item .nav-link {
+        display: inline-flex;
+        width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
